@@ -1,9 +1,9 @@
 <template>
   <v-app class="grey lighten-4">
     <NavBar />
-    <v-content>
-      <router-view></router-view>
-    </v-content>
+    <v-main>
+      <router-view class="mx-4 mb-4"></router-view>
+    </v-main>
   </v-app>
 </template>
 
