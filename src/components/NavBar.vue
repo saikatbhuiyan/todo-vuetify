@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar flat app>
+    <v-app-bar text app>
       <v-app-bar-nav-icon
         @click="drawer = !drawer"
         class="grey--text"
@@ -10,13 +10,21 @@
         <span>Ninja</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="grey">
+      <v-btn text color="grey">
         <span>Sign Out</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
-    </v-toolbar>
+    </v-app-bar>
 
     <v-navigation-drawer app v-model="drawer" class="primary pt-10">
+      <v-layout column align-center>
+        <v-flex class="mt-5">
+          <v-avatar size="100">
+            <img class="text-lg-center" src="/avatar-1.png" />
+          </v-avatar>
+          <p class="white--text subheading mt-1">Md. Shahabuddin</p>
+        </v-flex>
+      </v-layout>
       <v-list>
         <v-list-item
           v-for="link in links"
@@ -24,16 +32,16 @@
           router
           :to="link.route"
         >
-          <v-list-tile>
-            <v-list-tile-action>
+          <v-list-item>
+            <v-list-item-action>
               <v-icon class="white--text">{{ link.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title class="white--text">{{
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title class="white--text">{{
                 link.text
-              }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
+              }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
